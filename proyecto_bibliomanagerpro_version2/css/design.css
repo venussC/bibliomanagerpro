@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('Logobibliomanagerpronaranja.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Overlay con blur */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(237, 155, 108, 0.278);
+    backdrop-filter: blur(12px);
+    z-index: 1;
+}
+
+main {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 20px;
+}
+
+#card3 {
+    background-color: rgba(237, 213, 190, 0.495);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+#logo_section {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo_section img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/*efecto del logo*/
+#logo_section:hover {
+    transform: rotate(-3deg) scale(1.05);
+    transition: all 0.4s ease;
+}
+
+
+#btnlogin {
+    background-color: darkred;
+    border-color: brown;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#btnlogin:hover {
+    background-color: #a50000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#ref_link {
+    color: black;
+    font-weight: bold;
+}
+
+#txtfrm {
+    font-weight: bold;
+}
+
+/*efectos*/
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+input:hover {
+    border-color: #d4a373;
+}
+
+input:focus {
+    border-color: #8b0000;
+    box-shadow: 0 0 5px rgba(139, 0, 0, 0.488);
+    outline: none;
+}
+
+a {
+    color: #5a0000;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background-color: #8b0000;
+    transition: width 0.3s ease;
+}
+
+a:hover {
+    color: #8b0000;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+#card3{
+  animation: fadeIn 0.7s ease forwards;
+}
+
+
+#codigo{
+    font-size: 24px;
+    letter-spacing: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #card3 {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    #logo_section {
+        order: -1;
+    }
+
+    #logo_section img {
+        max-width: 200px;
+    }
+}
